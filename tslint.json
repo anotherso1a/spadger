@@ -1,13 +1,5 @@
 {
   "rules": {
-    "arrow-return-shorthand": true,
-    "binary-expression-operand-order": true,
-    "arrow-parens": true,
-    "indent": [true, "tabs", 2],
-    "typedef-whitespace": true,
-    "whitespace": true,
-    "no-console": true,
-    "no-consecutive-blank-lines": true,
-    "trailing-comma": [true, { "multiline": "never", "singleline": "never" }]
+    "no-console": true
   }
 }
