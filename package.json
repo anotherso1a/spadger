@@ -1,6 +1,6 @@
 {
   "name": "assdk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "自用函数库",
   "main": "index.js",
   "scripts": {
@@ -31,9 +31,7 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.6.0",
     "@types/jest": "^24.0.19",
-    "eslint-plugin-prettier": "^3.1.1",
     "ts-jest": "^24.1.0"
   },
   "config": {
