@@ -1,1 +1,1 @@
-export { sum } from './src/demo';
+export { sum,shuffle } from './src/demo';

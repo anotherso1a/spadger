@@ -2,7 +2,6 @@
   "rules": {
     "arrow-return-shorthand": true,
     "binary-expression-operand-order": true,
-    "space-before-function-paren": true,
     "arrow-parens": true,
     "indent": [true, "tabs", 2],
     "typedef-whitespace": true,
