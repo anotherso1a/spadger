@@ -10,7 +10,7 @@
     "cfb": "sh scripts/feature.sh c",
     "mfb": "sh scripts/feature.sh m",
     "dfb": "sh scripts/feature.sh d",
-    "build": "webpack"
+    "build": "npm run pr && npm run test test && webpack"
   },
   "keywords": [
     "js",
