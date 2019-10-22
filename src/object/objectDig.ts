@@ -1,8 +1,11 @@
 /**
- * @export
+ * @name objectDig
+ * @description 从对象中找到特定key的值
  * @param {Object} obj
  * @param {string} target
  * @returns {*}
+ * @example
+ * afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
  */
 export function objectDig(obj: Object, target: string): any {
   return target in obj

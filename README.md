@@ -22,62 +22,160 @@
 
 ## API
 
-### Array
+### shuffle
 
-#### shuffle
+数组洗牌,返回顺序随机的新数组(浅拷贝)
 
-洗牌算法,用于随机打乱数组
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Array|arr|需要洗牌的数组,纯数字|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Array|打乱后的新数组|
+
+
+#### 例子
 
 ```js
-afl.shuffle([1,2,3]) //[2,1,3]
+afl.shuffle([1,2,3]) //[3,2,1]
+afl.shuffle([1]) //[1]
 ```
 
-### Function
+### throttle
 
-#### throttle
+节流函数(连续触发时第一次立即触发,之后每 delay ms 执行一次)
 
-节流函数
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Function|fn|需要节流的方法|
+|Number|delay|单位:ms,每次执行函数的间隔|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Function|被节流后的函数|
+
+
+#### 例子
 
 ```js
 let count = {n:0}
 let thottled = afl.throttle(count=> ++count.n,500)
 setTimeout(()=>{
-  for(let i = 0; i < 10 ; i++){
-    thottled(count)
-  }
-  console.log(count.n)//1
+for(let i = 0; i < 10 ; i++){
+thottled(count)
+}
+console.log(count.n)//1
 },1000)
 ```
 
-### Object
+### object2map
 
-#### object2map
+对象转map
 
-对象转为Map
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|无|obj|obj 需要转换成map的对象|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Map|转换后的Map|
+
+
+#### 例子
 
 ```js
 afl.object2map({
-  a: 1,
-  b: 2
+a: 1,
+b: 2
 }) //Map(2) {"a" => 1, "b" => 2}
 ```
 
-#### objectDig
+### objectDig
 
-查找对象中特定key值
+从对象中找到特定key的值
+
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Object|obj|无|
+|string|target|无|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|无|{}|
+
+
+#### 例子
 
 ```js
 afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ```
 
-### String
+### parseQuery
 
-#### parseQuery && stringifyQuery
+将链接search转换为对象,可以用原生api: URLSearchParams
 
-序列化或解析search字符串
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|String|str|search字符串,不包含?|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Object|参数对象|
+
+
+#### 例子
 
 ```js
 afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+```
+
+### stringifyQuery
+
+将对象转换成search字符串(不带问号)
+
+#### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Object|obj|要被转换成search字符串的对象|
+
+
+#### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|String|字符串|
+
+
+#### 例子
+
+```js
 afl.stringifyQuery({a:1,b:2}) //a=1&b=2
 ```
 
