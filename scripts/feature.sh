@@ -25,7 +25,7 @@ if [ $1 == 'm' ];then
     git push
     git checkout $2
     git pull --rebase
-    git merge feature/$FEATURE --no-ff -m "Merge branch feature/$FEATURE"
+    git rebase feature/$FEATURE
     git push
   else
     echo '存在尚未提交的更改,请检查git status,已终止合并' #退出合并脚本
