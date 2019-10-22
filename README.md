@@ -5,13 +5,81 @@
 ```html
 <script src="js/afl.min.js"></script>
 <script>
-  afl.sum([1,2,3]) //6
+  afl.shuffle([1,2,3]) //[2,1,3]
+  afl.object2map({
+    a: 1,
+    b: 2
+  }) //Map(2) {"a" => 1, "b" => 2}
+  afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+  afl.stringifyQuery({a:1,b:2}) //a=1&b=2
+  afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
 </script>
 ```
 
 ## 描述
 
 初步打算封装一些自己造的轮子
+
+## API
+
+### Array
+
+#### shuffle
+
+洗牌算法,用于随机打乱数组
+
+```js
+afl.shuffle([1,2,3]) //[2,1,3]
+```
+
+### Function
+
+#### throttle
+
+节流函数
+
+```js
+let count = {n:0}
+let thottled = afl.throttle(count=> ++count.n,500)
+setTimeout(()=>{
+  for(let i = 0; i < 10 ; i++){
+    thottled(count)
+  }
+  console.log(count.n)//1
+},1000)
+```
+
+### Object
+
+#### object2map
+
+对象转为Map
+
+```js
+afl.object2map({
+  a: 1,
+  b: 2
+}) //Map(2) {"a" => 1, "b" => 2}
+```
+
+#### objectDig
+
+查找对象中特定key值
+
+```js
+afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+```
+
+### String
+
+#### parseQuery && stringifyQuery
+
+序列化或解析search字符串
+
+```js
+afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+afl.stringifyQuery({a:1,b:2}) //a=1&b=2
+```
 
 ## 项目说明
 

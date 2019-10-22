@@ -4,7 +4,7 @@ import { throttle } from '../../src/function/throttle';
 test('throttle', () => {
   let count1: Number = 0;
   let count2: Number = 0;
-  let fn:Function = n => n++;
+  let fn: Function = n => n++;
   let throttled = throttle(fn, 20);
   for (let i = 0; i < 5; i++) {
     setTimeout(() => {
