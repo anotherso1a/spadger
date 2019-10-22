@@ -11,6 +11,9 @@ module.exports = {
     umdNamedDefine: true
   },
   resolve: {
+    alias:{
+      '@':path.resolve(__dirname,'src')
+    },
     // Add '.ts' and '.tsx' as a resolvable extension.
     extensions: [".ts"]
   },
