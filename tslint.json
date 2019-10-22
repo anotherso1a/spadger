@@ -1,5 +1,7 @@
 {
   "rules": {
-    "no-console": true
+    "no-console": true,
+    "no-implicit-dependencies": [true, ["src"]],
+    "no-submodule-imports": [true, "src"]
   }
 }

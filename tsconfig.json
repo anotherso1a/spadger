@@ -1,8 +1,12 @@
 //docs: https://www.tslang.cn/docs/handbook/compiler-options.html
 {
   "compilerOptions": {
+    "allowJs": true,
     "alwaysStrict": false,
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "experimentalDecorators": true,
     "sourceMap": true,
     "target": "es5",

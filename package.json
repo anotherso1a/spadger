@@ -2,10 +2,10 @@
   "name": "assdk",
   "version": "0.0.1",
   "description": "自用函数库",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "pr": "prettier --write '{src,__{tests,mocks}__}/**/*.{js,ts}'",
+    "pr": "prettier --write '{src,__tests__}/**/*.{js,ts}'",
     "commit": "git add . && git-cz",
     "cfb": "sh scripts/feature.sh c",
     "mfb": "sh scripts/feature.sh m",
