@@ -4,8 +4,8 @@
 # $3 commit text
 
 if [ $1 == 'c' ];then
-  git checkout master
-  git pull
+  git checkout dev
+  git pull --rebase
   git checkout -b feature/$2
   git push --set-upstream origin feature/$2
 fi
