@@ -5,7 +5,7 @@
  * @param {string} target
  * @returns {*}
  * @example
- * spobjectDig({a:{b:{c:{d:4}}}},'d') //4
+ * sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
  */
 export function objectDig(obj: Object, target: string): any {
   return target in obj

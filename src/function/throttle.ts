@@ -6,7 +6,7 @@
  * @returns {Function} 被节流后的函数
  * @example
  * let count = {n:0}
- * let thottled = spthrottle(count=> ++count.n,500)
+ * let thottled = sp.throttle(count=> ++count.n,500)
  * setTimeout(()=>{
  *  for(let i = 0; i < 10 ; i++){
  *     thottled(count)
