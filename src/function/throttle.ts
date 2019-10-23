@@ -15,7 +15,7 @@
  * },1000)
  */
 export function throttle(fn: Function, delay: Number = 500): Function {
-  let last: number = Date.now(); //绑定时时间
+  let last: number = 0; //绑定时时间为0
   return function(...args: Array<any>) {
     if (Date.now() - last > delay) {
       //两次执行间隔大于delay
