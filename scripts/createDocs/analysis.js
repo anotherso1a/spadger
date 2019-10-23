@@ -7,7 +7,7 @@ function removeSign(e) {
 function parseStatment(e) {
   let type, name, desc
   try {
-    type = e.match(/\{.+?\}/g)[0].replace(/[{}]/g, '')
+    type = e.match(/\{.+?\}/g)[0].replace(/[{}]/g, '').replace('|','&#124;')
   } catch { type = "" }
   try {
     name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0]

@@ -33,7 +33,7 @@
 |类型|参数名|描述|
 |:-:|:-:|:-:|
 |Array|items|被转化的数组|
-|String|Number|id|父节点的id值|
+|String&#124;Number|id|父节点的id值|
 |String|link|链接父节点id的属性key|
 
 
