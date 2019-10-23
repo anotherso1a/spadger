@@ -1,5 +1,11 @@
 # SpadgerJS
 
+## Install
+
+```sh
+npm install spadgerjs
+```
+
 ## Usage
 
 ### with cdn
