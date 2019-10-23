@@ -6,7 +6,7 @@
  * @param {Number} delay 单位:ms,防抖间隔
  * @returns {Function} 被防抖后的函数
  * @example
- * let debounced = spadger.debounce(()=>console.log("scroll")),500)
+ * let debounced = spdebounce(()=>console.log("scroll")),500)
  * window.onScroll = debounced; //滚动停止后才会执行
  */
 export function debounce(fn: Function, wait: number) {

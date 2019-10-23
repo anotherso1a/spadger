@@ -4,7 +4,7 @@
  * @param {String} str search字符串,不包含?
  * @returns {Object} 参数对象
  * @example
- * spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+ * spparseQuery('a=1&b=2') //{a: "1", b: "2"}
  */
 export function parseQuery(str: String = location.search.slice(1)) {
   return str.split('&').reduce((o, s) => {

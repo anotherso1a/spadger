@@ -4,7 +4,7 @@
  * @param obj 需要转换成map的对象
  * @returns {Map} 转换后的Map
  * @example
- * spadger.object2map({
+ * spobject2map({
  *   a: 1,
  *   b: 2
  * }) //Map(2) {"a" => 1, "b" => 2}

@@ -77,8 +77,8 @@ nest(items,null,'parent_id')
 ##### 例子
 
 ```js
-spadger.shuffle([1,2,3]) //[3,2,1]
-spadger.shuffle([1]) //[1]
+spshuffle([1,2,3]) //[3,2,1]
+spshuffle([1]) //[1]
 ```
 
 ### Function
@@ -105,7 +105,7 @@ spadger.shuffle([1]) //[1]
 ##### 例子
 
 ```js
-let debounced = spadger.debounce(()=>console.log("scroll")),500)
+let debounced = spdebounce(()=>console.log("scroll")),500)
 window.onScroll = debounced; //滚动停止后才会执行
 ```
 
@@ -132,7 +132,7 @@ window.onScroll = debounced; //滚动停止后才会执行
 
 ```js
 let count = {n:0}
-let thottled = spadger.throttle(count=> ++count.n,500)
+let thottled = spthrottle(count=> ++count.n,500)
 setTimeout(()=>{
  for(let i = 0; i < 10 ; i++){
     thottled(count)
@@ -164,7 +164,7 @@ setTimeout(()=>{
 ##### 例子
 
 ```js
-spadger.object2map({
+spobject2map({
   a: 1,
   b: 2
 }) //Map(2) {"a" => 1, "b" => 2}
@@ -192,7 +192,7 @@ spadger.object2map({
 ##### 例子
 
 ```js
-spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
+spobjectDig({a:{b:{c:{d:4}}}},'d') //4
 ```
 
 ### String
@@ -218,7 +218,7 @@ spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ##### 例子
 
 ```js
-spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+spparseQuery('a=1&b=2') //{a: "1", b: "2"}
 ```
 
 #### stringifyQuery
@@ -242,7 +242,7 @@ spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 ##### 例子
 
 ```js
-spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
+spstringifyQuery({a:1,b:2}) //a=1&b=2
 ```
 
   
