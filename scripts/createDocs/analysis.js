@@ -13,7 +13,7 @@ function parseStatment(e) {
     name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0]
   } catch { name = '' }
   try {
-    desc = e.replace(/(\{.+?\})\s+?[a-zA-Z\d]*/, '').trim()
+    desc = e.replace(/(\{.+?\})(\s?)+?[a-zA-Z\d]*/, '').trim()
   } catch { desc = "" }
   return { type, name, desc }
 }
@@ -23,8 +23,8 @@ function format(content) {
   let name, desc, params, returns, example
   let texts = content
     .split(/\n+/)
-    .map(e => e.replace(/(\/\*|\*\/|\*)/g, '').trim())
-    .filter(e => e)
+    .filter(e => !/^[\s/*]+$/g.test(e))
+    .map(e => e.replace(/^\s\*\s/g, ''))
   name = texts.filter(e => e.startsWith('@name')).map(removeSign).join('\n')
   desc = texts.filter(e => e.startsWith('@description')).map(removeSign).join('\n')
   params = texts.filter(e => e.startsWith('@param')).map(removeSign).map(parseStatment)

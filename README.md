@@ -22,36 +22,40 @@
 
 ## API
 
-### shuffle
+### Array
+
+#### shuffle
 
 数组洗牌,返回顺序随机的新数组(浅拷贝)
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
 |Array|arr|需要洗牌的数组,纯数字|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
 |Array|打乱后的新数组|
 
 
-#### 例子
+##### 例子
 
 ```js
 afl.shuffle([1,2,3]) //[3,2,1]
 afl.shuffle([1]) //[1]
 ```
 
-### throttle
+### Function
+
+#### throttle
 
 节流函数(连续触发时第一次立即触发,之后每 delay ms 执行一次)
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
@@ -59,58 +63,60 @@ afl.shuffle([1]) //[1]
 |Number|delay|单位:ms,每次执行函数的间隔|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
 |Function|被节流后的函数|
 
 
-#### 例子
+##### 例子
 
 ```js
 let count = {n:0}
 let thottled = afl.throttle(count=> ++count.n,500)
 setTimeout(()=>{
-for(let i = 0; i < 10 ; i++){
-thottled(count)
-}
-console.log(count.n)//1
+ for(let i = 0; i < 10 ; i++){
+    thottled(count)
+ }
+ console.log(count.n)//1
 },1000)
 ```
 
-### object2map
+### Object
+
+#### object2map
 
 对象转map
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
 |无|obj|obj 需要转换成map的对象|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
 |Map|转换后的Map|
 
 
-#### 例子
+##### 例子
 
 ```js
 afl.object2map({
-a: 1,
-b: 2
+  a: 1,
+  b: 2
 }) //Map(2) {"a" => 1, "b" => 2}
 ```
 
-### objectDig
+#### objectDig
 
 从对象中找到特定key的值
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
@@ -118,67 +124,70 @@ b: 2
 |string|target|无|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
-|无|{}|
+|*|无|
 
 
-#### 例子
+##### 例子
 
 ```js
 afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ```
 
-### parseQuery
+### String
+
+#### parseQuery
 
 将链接search转换为对象,可以用原生api: URLSearchParams
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
 |String|str|search字符串,不包含?|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
 |Object|参数对象|
 
 
-#### 例子
+##### 例子
 
 ```js
 afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 ```
 
-### stringifyQuery
+#### stringifyQuery
 
 将对象转换成search字符串(不带问号)
 
-#### 参数
+##### 参数
 
 |类型|参数名|描述|
 |:-:|:-:|:-:|
 |Object|obj|要被转换成search字符串的对象|
 
 
-#### 返回值
+##### 返回值
 
 |类型|描述|
 |:-:|:-:|
 |String|字符串|
 
 
-#### 例子
+##### 例子
 
 ```js
 afl.stringifyQuery({a:1,b:2}) //a=1&b=2
 ```
 
+  
 ## 项目说明
 
 **1.** `commit`提交规范,请使用`npm run commit` 进行提交
