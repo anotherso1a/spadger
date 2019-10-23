@@ -1,7 +1,7 @@
 /**
  *
  * @name debounce
- * @description 防抖函数(连续触发时 保证只触发一次，过了delay时间后，才会触发)
+ * @description 防抖函数(连续触发时 保证只触发一次，过了delay时间后，才会再次触发
  * @param {Function} fn 需要防抖的方法
  * @param {Number} delay 单位:ms,防抖间隔
  * @returns {Function} 被防抖后的函数

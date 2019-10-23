@@ -51,6 +51,32 @@ afl.shuffle([1]) //[1]
 
 ### Function
 
+#### debounce
+
+防抖函数(连续触发时 保证只触发一次，过了delay时间后，才会触发)
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Function|fn|需要防抖的方法|
+|Number|delay|单位:ms,防抖间隔|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Function|被防抖后的函数|
+
+
+##### 例子
+
+```js
+let thottled = afl.debounce(()=>console.log("scroll")),500)
+window.onScroll = thottled;
+```
+
 #### throttle
 
 节流函数(连续触发时第一次立即触发,之后每 delay ms 执行一次)
