@@ -24,6 +24,38 @@
 
 ### Array
 
+#### nest
+
+数组转树,必须带有id属性,并且拥有一个类似parent_id能指向父级id的键
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Array|items|被转化的数组|
+|String|Number|id|父节点的id值|
+|String|link|链接父节点id的属性key|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Object|树形对象|
+
+
+##### 例子
+
+```js
+let items = [
+   { id: 1, parent_id: null },
+   { id: 2, parent_id: 1 },
+   { id: 3, parent_id: 2 },
+   { id: 4, parent_id: 1 },
+]
+nest(items,null,'parent_id')
+```
+
 #### shuffle
 
 数组洗牌,返回顺序随机的新数组(浅拷贝)
@@ -53,7 +85,7 @@ spadger.shuffle([1]) //[1]
 
 #### debounce
 
-防抖函数(连续触发时 保证只触发一次，过了delay时间后，才会触发)
+防抖函数(连续触发时 保证只执行一次，过了delay时间后，才会再次触发
 
 ##### 参数
 
@@ -73,8 +105,8 @@ spadger.shuffle([1]) //[1]
 ##### 例子
 
 ```js
-let thottled = spadger.debounce(()=>console.log("scroll")),500)
-window.onScroll = thottled;
+let debounced = spadger.debounce(()=>console.log("scroll")),500)
+window.onScroll = debounced; //滚动停止后才会执行
 ```
 
 #### throttle
