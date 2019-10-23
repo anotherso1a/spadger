@@ -17,6 +17,10 @@
     "js",
     "function"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anotherso1a/spadger"
+  },
   "author": "AnotherSola",
   "license": "MIT",
   "devDependencies": {
