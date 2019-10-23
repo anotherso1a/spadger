@@ -5,14 +5,14 @@
 ```html
 <script src="js/spadger.min.js"></script>
 <script>
-  spadger.shuffle([1,2,3]) //[2,1,3]
-  spadger.object2map({
+  sp.shuffle([1,2,3]) //[2,1,3]
+  sp.object2map({
     a: 1,
     b: 2
   }) //Map(2) {"a" => 1, "b" => 2}
-  spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
-  spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
-  spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
+  sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+  sp.stringifyQuery({a:1,b:2}) //a=1&b=2
+  sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
 </script>
 ```
 
@@ -219,9 +219,13 @@ sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
 
 ```js
 <<<<<<< HEAD
+<<<<<<< HEAD
 sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 =======
 spparseQuery('a=1&b=2') //{a: "1", b: "2"}
+=======
+sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+>>>>>>> fix(doc): 修改文档中错乱的东西
 ```
 将对象转换成search字符串(不带问号)
 
@@ -243,10 +247,14 @@ spparseQuery('a=1&b=2') //{a: "1", b: "2"}
 
 ```js
 <<<<<<< HEAD
+<<<<<<< HEAD
 sp.stringifyQuery({a:1,b:2}) //a=1&b=2
 =======
 spstringifyQuery({a:1,b:2}) //a=1&b=2
 >>>>>>> docs(docs): 更新文档
+=======
+sp.stringifyQuery({a:1,b:2}) //a=1&b=2
+>>>>>>> fix(doc): 修改文档中错乱的东西
 ```
 
   
