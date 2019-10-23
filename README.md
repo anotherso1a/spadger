@@ -1,6 +1,8 @@
-# 函数库
+# SpadgerJS
 
 ## Usage
+
+### with cdn
 
 ```html
 <script src="js/spadger.min.js"></script>
@@ -15,6 +17,25 @@
   sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
 </script>
 ```
+
+### with CommonJS
+
+```js
+import sp from 'spadgerjs'
+sp.shuffle([1,2,3]) //[2,1,3]
+//or import some function
+import { shuffle } from 'spadgerjs'
+shuffle([1,2,3]) //[2,1,3]
+```
+
+### with require
+
+```js
+let sp = require("spadgerjs")
+sp.shuffle([1,2,3]) //[2,1,3]
+```
+
+感谢您的使用 | Thank you for using spadgerjs
 
 ## 描述
 

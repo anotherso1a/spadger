@@ -1,5 +1,5 @@
 {
-  "name": "spadger",
+  "name": "spadgerjs",
   "version": "0.0.1",
   "description": "自用函数库",
   "main": "./dist/spadger.min.js",
