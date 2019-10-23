@@ -3,16 +3,16 @@
 ## Usage
 
 ```html
-<script src="js/afl.min.js"></script>
+<script src="js/spadger.min.js"></script>
 <script>
-  afl.shuffle([1,2,3]) //[2,1,3]
-  afl.object2map({
+  spadger.shuffle([1,2,3]) //[2,1,3]
+  spadger.object2map({
     a: 1,
     b: 2
   }) //Map(2) {"a" => 1, "b" => 2}
-  afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
-  afl.stringifyQuery({a:1,b:2}) //a=1&b=2
-  afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+  spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+  spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
+  spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
 </script>
 ```
 
@@ -45,8 +45,8 @@
 ##### 例子
 
 ```js
-afl.shuffle([1,2,3]) //[3,2,1]
-afl.shuffle([1]) //[1]
+spadger.shuffle([1,2,3]) //[3,2,1]
+spadger.shuffle([1]) //[1]
 ```
 
 ### Function
@@ -73,7 +73,7 @@ afl.shuffle([1]) //[1]
 ##### 例子
 
 ```js
-let thottled = afl.debounce(()=>console.log("scroll")),500)
+let thottled = spadger.debounce(()=>console.log("scroll")),500)
 window.onScroll = thottled;
 ```
 
@@ -100,7 +100,7 @@ window.onScroll = thottled;
 
 ```js
 let count = {n:0}
-let thottled = afl.throttle(count=> ++count.n,500)
+let thottled = spadger.throttle(count=> ++count.n,500)
 setTimeout(()=>{
  for(let i = 0; i < 10 ; i++){
     thottled(count)
@@ -132,7 +132,7 @@ setTimeout(()=>{
 ##### 例子
 
 ```js
-afl.object2map({
+spadger.object2map({
   a: 1,
   b: 2
 }) //Map(2) {"a" => 1, "b" => 2}
@@ -160,7 +160,7 @@ afl.object2map({
 ##### 例子
 
 ```js
-afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ```
 
 ### String
@@ -186,7 +186,7 @@ afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ##### 例子
 
 ```js
-afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 ```
 
 #### stringifyQuery
@@ -210,7 +210,7 @@ afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 ##### 例子
 
 ```js
-afl.stringifyQuery({a:1,b:2}) //a=1&b=2
+spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
 ```
 
   

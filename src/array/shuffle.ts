@@ -4,8 +4,8 @@
  * @param {Array} arr 需要洗牌的数组,纯数字
  * @returns {Array} 打乱后的新数组
  * @example
- * afl.shuffle([1,2,3]) //[3,2,1]
- * afl.shuffle([1]) //[1]
+ * spadger.shuffle([1,2,3]) //[3,2,1]
+ * spadger.shuffle([1]) //[1]
  */
 export function shuffle([...arr]: Array<number>): Array<number> {
   arr = arr.slice();

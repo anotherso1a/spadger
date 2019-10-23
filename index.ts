@@ -6,14 +6,14 @@ const requireComponent = require['context'](
   // 匹配基础组件文件名的正则表达式
   /\w+\.(ts|js)$/
 );
-let afl = {}; //最后导出的对象
+let spadger = {}; //最后导出的对象
 requireComponent.keys().forEach(fileName => {
   // 获取模块配置
   const componentConfig = requireComponent(fileName);
 
   Object.keys(componentConfig).forEach(fn => {
-    afl[fn] = componentConfig[fn];
+    spadger[fn] = componentConfig[fn];
   });
 });
 
-module.exports = afl;
+module.exports = spadger;

@@ -5,7 +5,7 @@
  * @param {string} target
  * @returns {*}
  * @example
- * afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+ * spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
  */
 export function objectDig(obj: Object, target: string): any {
   return target in obj

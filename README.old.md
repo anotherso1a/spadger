@@ -3,16 +3,16 @@
 ## Usage
 
 ```html
-<script src="js/afl.min.js"></script>
+<script src="js/spadger.min.js"></script>
 <script>
-  afl.shuffle([1,2,3]) //[2,1,3]
-  afl.object2map({
+  spadger.shuffle([1,2,3]) //[2,1,3]
+  spadger.object2map({
     a: 1,
     b: 2
   }) //Map(2) {"a" => 1, "b" => 2}
-  afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
-  afl.stringifyQuery({a:1,b:2}) //a=1&b=2
-  afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+  spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+  spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
+  spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
 </script>
 ```
 
@@ -29,7 +29,7 @@
 洗牌算法,用于随机打乱数组
 
 ```js
-afl.shuffle([1,2,3]) //[2,1,3]
+spadger.shuffle([1,2,3]) //[2,1,3]
 ```
 
 ### Function
@@ -40,7 +40,7 @@ afl.shuffle([1,2,3]) //[2,1,3]
 
 ```js
 let count = {n:0}
-let thottled = afl.throttle(count=> ++count.n,500)
+let thottled = spadger.throttle(count=> ++count.n,500)
 setTimeout(()=>{
   for(let i = 0; i < 10 ; i++){
     thottled(count)
@@ -56,7 +56,7 @@ setTimeout(()=>{
 对象转为Map
 
 ```js
-afl.object2map({
+spadger.object2map({
   a: 1,
   b: 2
 }) //Map(2) {"a" => 1, "b" => 2}
@@ -67,7 +67,7 @@ afl.object2map({
 查找对象中特定key值
 
 ```js
-afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
+spadger.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ```
 
 ### String
@@ -77,8 +77,8 @@ afl.objectDig({a:{b:{c:{d:4}}}},'d') //4
 序列化或解析search字符串
 
 ```js
-afl.parseQuery('a=1&b=2') //{a: "1", b: "2"}
-afl.stringifyQuery({a:1,b:2}) //a=1&b=2
+spadger.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+spadger.stringifyQuery({a:1,b:2}) //a=1&b=2
 ```
 
 ## 项目说明

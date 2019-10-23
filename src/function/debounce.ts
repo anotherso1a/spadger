@@ -6,7 +6,7 @@
  * @param {Number} delay 单位:ms,防抖间隔
  * @returns {Function} 被防抖后的函数
  * @example
- * let thottled = afl.debounce(()=>console.log("scroll")),500)
+ * let thottled = spadger.debounce(()=>console.log("scroll")),500)
  * window.onScroll = thottled;
  */
 export function debounce(fn: Function, delay: number): Function {
