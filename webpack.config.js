@@ -5,9 +5,9 @@ module.exports = {
   entry: './index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'afl.min.js',
+    filename: 'spadger.min.js',
     libraryTarget: 'umd',
-    library: 'afl',
+    library: 'sp',
     umdNamedDefine: true
   },
   resolve: {

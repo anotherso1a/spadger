@@ -1,8 +1,8 @@
 {
-  "name": "assdk",
+  "name": "spadger",
   "version": "0.0.1",
   "description": "自用函数库",
-  "main": "index.ts",
+  "main": "./dist/spadger.min.js",
   "scripts": {
     "test": "jest",
     "pr": "prettier --write '{src,__tests__}/**/*.{js,ts}'",
