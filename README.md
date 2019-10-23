@@ -218,11 +218,11 @@ sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
 ##### 例子
 
 ```js
+<<<<<<< HEAD
 sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
+=======
+spparseQuery('a=1&b=2') //{a: "1", b: "2"}
 ```
-
-#### stringifyQuery
-
 将对象转换成search字符串(不带问号)
 
 ##### 参数
@@ -242,7 +242,11 @@ sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
 ##### 例子
 
 ```js
+<<<<<<< HEAD
 sp.stringifyQuery({a:1,b:2}) //a=1&b=2
+=======
+spstringifyQuery({a:1,b:2}) //a=1&b=2
+>>>>>>> docs(docs): 更新文档
 ```
 
   
