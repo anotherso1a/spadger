@@ -7,13 +7,13 @@ function removeSign(e) {
 function parseStatment(e) {
   let type, name, desc
   try {
-    type = e.match(/\{.+?\}/g)[0].replace(/[{}]/g, '').replace('|','&#124;')
+    type = e.match(/\{.+?\}/g)[0].replace(/[{}]/g, '').replace(/\|/g,'&#124;')
   } catch { type = "" }
   try {
-    name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0].replace('|','&#124;')
+    name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0].replace(/\|/g,'&#124;')
   } catch { name = '' }
   try {
-    desc = e.replace(/(\{.+?\})(\s?)+?[a-zA-Z\d]*/, '').trim().replace('|','&#124;')
+    desc = e.replace(/(\{.+?\})(\s?)+?[a-zA-Z\d]*/, '').trim().replace(/\|/g,'&#124;')
   } catch { desc = "" }
   return { type, name, desc }
 }
