@@ -10,10 +10,10 @@ function parseStatment(e) {
     type = e.match(/\{.+?\}/g)[0].replace(/[{}]/g, '').replace('|','&#124;')
   } catch { type = "" }
   try {
-    name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0]
+    name = e.replace(/\{.+?\}/g, '').match(/[a-zA-Z\d]+/g)[0].replace('|','&#124;')
   } catch { name = '' }
   try {
-    desc = e.replace(/(\{.+?\})(\s?)+?[a-zA-Z\d]*/, '').trim()
+    desc = e.replace(/(\{.+?\})(\s?)+?[a-zA-Z\d]*/, '').trim().replace('|','&#124;')
   } catch { desc = "" }
   return { type, name, desc }
 }

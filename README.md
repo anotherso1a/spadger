@@ -151,7 +151,7 @@ window.onScroll = debounced; //滚动停止后才会执行
 
 |类型|描述|
 |:-:|:-:|
-|Memorized|接受(?string|number|boolean)参数,返回任意值|
+|Memorized|接受(?string&#124;number|boolean)参数,返回任意值|
 
 
 ##### 例子
