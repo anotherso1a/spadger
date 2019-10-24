@@ -136,6 +136,33 @@ let debounced = sp.debounce(()=>console.log("scroll")),500)
 window.onScroll = debounced; //滚动停止后才会执行
 ```
 
+#### memorize
+
+缓存函数,被缓存的函数执行后会将参数对应的结果进行缓存
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Function|fn|无|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Memorized|接受(?string|number|boolean)参数,返回任意值|
+
+
+##### 例子
+
+```js
+let fib = n => n<2 ? 1 : fib(n-1) + fib(n-2)
+//不做缓存直接调用会导致浏览器卡死
+fib = sp.memorize(fib)
+fib(1000) //7.0330367711422765e+208
+```
+
 #### throttle
 
 节流函数(连续触发时第一次立即触发,之后每 delay ms 执行一次)
@@ -169,6 +196,33 @@ setTimeout(()=>{
 ```
 
 ### Object
+
+#### isEqual
+
+比较两个对象是否值相等,深度为1
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|any|o1|对象1|
+|any|o2|对象2|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Boolean|判断结果|
+
+
+##### 例子
+
+```js
+sp.isEqual(1,1) //true
+sp.isEqual({a:1},{a:1}) //true
+sp.isEqual('a','bc') //false
+```
 
 #### object2map
 

@@ -14,7 +14,7 @@
  *  console.log(count.n)//1
  * },1000)
  */
-export function throttle(fn: Function, delay: Number = 500): Function {
+export function throttle(fn: Function, delay: number = 500): Function {
   let last: number = 0; //绑定时时间为0
   return function(...args: Array<any>) {
     if (Date.now() - last > delay) {

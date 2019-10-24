@@ -6,7 +6,7 @@
  * @example
  * sp.parseQuery('a=1&b=2') //{a: "1", b: "2"}
  */
-export function parseQuery(str: String = location.search.slice(1)) {
+export function parseQuery(str: string = location.search.slice(1)) {
   return str.split('&').reduce((o, s) => {
     let [k, v] = s.split('=');
     o[k] = decodeURIComponent(v);

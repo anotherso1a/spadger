@@ -7,7 +7,7 @@
  * @example
  * sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
  */
-export function objectDig(obj: Object, target: string): any {
+export function objectDig(obj: object, target: string): any {
   return target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {

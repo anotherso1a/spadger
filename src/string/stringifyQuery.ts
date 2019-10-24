@@ -6,7 +6,7 @@
  * @example
  * sp.stringifyQuery({a:1,b:2}) //a=1&b=2
  */
-export function stringifyQuery(obj: Object): String {
+export function stringifyQuery(obj: object): string {
   return Object.keys(obj)
     .reduce((str, k) => `${str}&${k}=${encodeURIComponent(obj[k])}`, '')
     .slice(1);
