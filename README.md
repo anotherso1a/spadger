@@ -137,6 +137,34 @@ sp.shuffle([1]) //[1]
 
 ### Function
 
+#### curry
+
+函数柯里化
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Function|fn|需要被柯里化的函数|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Function|返回柯里化后的函数|
+
+
+##### 例子
+
+```js
+let fn = (a,b,c)=>a+b+c
+let curried = sp.curry(fn)
+curried(1,2,3) //6
+curried(1)(2)(3) //6
+curried(1,2)(3) //6
+```
+
 #### debounce
 
 防抖函数(连续触发时 保证只执行一次，过了delay时间后，才会再次触发
