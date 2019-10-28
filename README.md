@@ -1,4 +1,4 @@
-# SpadgerJS
+# [SpadgerJS](https://github.com/anotherso1a/spadger)
 
 ## Install
 
@@ -8,7 +8,7 @@ npm install spadgerjs
 
 ## Usage
 
-### with cdn
+### In Browser
 
 ```html
 <script src="js/spadger.min.js"></script>
@@ -24,7 +24,7 @@ npm install spadgerjs
 </script>
 ```
 
-### with CommonJS
+### ES Module
 
 ```js
 import sp from 'spadgerjs'
@@ -34,7 +34,7 @@ import { shuffle } from 'spadgerjs'
 shuffle([1,2,3]) //[2,1,3]
 ```
 
-### with require
+### NodeJS
 
 ```js
 let sp = require("spadgerjs")
