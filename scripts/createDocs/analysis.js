@@ -49,7 +49,7 @@ function getNotes(content) {
     let notes = content.match(parttern)[0]
     return format(notes)
   } catch (err) {
-    console.log(err)
+    console.log('error: some files dosen`t have Notes')
     return ''
   }
 }

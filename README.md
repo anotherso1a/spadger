@@ -218,6 +218,49 @@ fib = sp.memorize(fib)
 fib(1000) //7.0330367711422765e+208
 ```
 
+#### reactive
+
+用于侦测对象的数据变化(支持深度侦测,深度侦测的实现方案为延迟侦测)
+
+##### 参数
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Object &#124; Array|target|要被监测的对象|
+|Function|callback|对象变化后所执行的方法|
+
+
+##### 返回值
+
+|类型|描述|
+|:-:|:-:|
+|Proxy|侦测后的对象(修改该对象时会触发回调函数)|
+
+
+##### 例子
+
+```js
+import { reactive } from 'spadgerjs'
+//or let reactive = sp.reactive
+let obj = {
+  num:1,
+  arr:[],
+  o:{ n:1 }
+}
+let observed = reactive(obj,()=>{
+  console.log(obj.num)
+  console.log(obj.arr)
+  console.log(obj.o)
+})
+observed.num = 100
+observed.arr.push(1,2,3)
+observed.o.n = 1000
+//logs:
+//100
+//[1,2,3]
+//{n:100}
+```
+
 #### throttle
 
 节流函数(连续触发时第一次立即触发,之后每 delay ms 执行一次)

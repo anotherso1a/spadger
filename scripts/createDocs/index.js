@@ -15,6 +15,9 @@ async function getMD(filePath) {
   let docsStr = ''
   let files = await getAllFiles(filePath)
   files.forEach(file => {
+    if(fs.statSync(file).isDirectory()){//兼容以文件夹形式编写的复杂方法
+      file = path.resolve(file,'index.ts')
+    }
     let content = fs.readFileSync(file, 'utf-8')
     docsStr += note2md(analysis(content))
   })

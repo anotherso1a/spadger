@@ -8,9 +8,9 @@ const requireComponent = require['context'](
 );
 let spadger = {}; //最后导出的对象
 requireComponent.keys().forEach(fileName => {
+  if(/__tests__|\.nm\./g.test(fileName)) return
   // 获取模块配置
   const componentConfig = requireComponent(fileName);
-
   Object.keys(componentConfig).forEach(fn => {
     spadger[fn] = componentConfig[fn];
   });
