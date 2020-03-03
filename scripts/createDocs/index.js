@@ -15,8 +15,8 @@ async function getMD(filePath) {
   let docsStr = ''
   let files = await getAllFiles(filePath)
   files.forEach(file => {
-    if(fs.statSync(file).isDirectory()){//兼容以文件夹形式编写的复杂方法
-      file = path.resolve(file,'index.ts')
+    if (fs.statSync(file).isDirectory()) { //兼容以文件夹形式编写的复杂方法
+      file = path.resolve(file, 'index.ts')
     }
     let content = fs.readFileSync(file, 'utf-8')
     docsStr += note2md(analysis(content))
@@ -24,25 +24,19 @@ async function getMD(filePath) {
   return docsStr
 }
 
-async function createDocs() {
-  return `
-### Array
-${await getMD(arrayPath)}
-### Function
-${await getMD(functionPath)}
-### Object
-${await getMD(objectPath)}
-### String
-${await getMD(stringPath)}
-  `
+async function createDocs(templStr = '') {
+  return templStr
+    .replace('{{Array}}', await getMD(arrayPath))
+    .replace('{{Function}}', await getMD(functionPath))
+    .replace('{{Object}}', await getMD(objectPath))
+    .replace('{{String}}', await getMD(stringPath))
 }
 
 async function writeDocs() {
-  let readmePath = path.resolve(__dirname, '../../README.md')
-  let oldReadme = fs.readFileSync(readmePath, 'utf-8')
-  let docsStr = await createDocs()
-  let newReadme = oldReadme.replace(/(##\sAPI)[\s\S]+?(\n##\s)/, `## API\n${docsStr}\n## `)
-  fs.writeFileSync(path.resolve(__dirname, '../../README.md'), newReadme, 'utf-8')
+  let templPath = path.resolve(__dirname, './template/README.md')
+  let templStr = fs.readFileSync(templPath, 'utf-8')
+  let docsStr = await createDocs(templStr)
+  fs.writeFileSync(path.resolve(__dirname, '../../README.md'), docsStr, 'utf-8')
 }
 
 writeDocs()

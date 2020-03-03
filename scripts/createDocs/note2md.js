@@ -5,7 +5,7 @@ module.exports = function note2md(obj) {
 
 ${obj.desc||'无'}
 
-##### 参数
+**参数:**
 
 ${
   obj.params && obj.params.length
@@ -15,8 +15,7 @@ ${
   }).join('')
   :'无'
 }
-
-##### 返回值
+**返回值:**
 
 ${
   obj.returns && obj.returns.length
@@ -26,8 +25,7 @@ ${
   }).join('')
   :'无'
 }
-
-##### 例子
+**例子:**
 
 \`\`\`js
 ${obj.example}
