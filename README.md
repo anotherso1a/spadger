@@ -178,7 +178,7 @@ curried(1,2)(3) //6
 **例子:**
 
 ```js
-let debounced = sp.debounce(()=>console.log("scroll")),500)
+let debounced = sp.debounce(()=>console.log("scroll")), 500, true)
 window.onScroll = debounced; //滚动停止后500ms才会执行
 ```
 

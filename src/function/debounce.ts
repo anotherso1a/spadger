@@ -7,7 +7,7 @@
  * @param {Boolean} isPostposition 是否后置执行(当停止操作 delay ms 后执行,如果设为 true, 则触发时立即执行,后续 delay ms 内连续触发不执行)
  * @returns {Function} 被防抖后的函数
  * @example
- * let debounced = sp.debounce(()=>console.log("scroll")),500)
+ * let debounced = sp.debounce(()=>console.log("scroll")), 500, true)
  * window.onScroll = debounced; //滚动停止后500ms才会执行
  */
 export function debounce(

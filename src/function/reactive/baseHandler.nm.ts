@@ -12,17 +12,20 @@ const createGetter = callback => {
     return isObject(res) ? reactive(res, callback) : res;
   };
 };
+let TIMER = null;
 const createSetter = callback => {
-  let timer = null;
   return function set(
     target: any,
     key: string | symbol,
     value: any,
     receiver: any
   ): boolean {
+    if (target[key] === value) {
+      return Reflect.set(target, key, value, receiver);
+    }
     const result = Reflect.set(target, key, value, receiver);
-    clearTimeout(timer);
-    setTimeout(callback, 0);
+    clearTimeout(TIMER);
+    TIMER = setTimeout(callback, 0);
     return result;
   };
 };

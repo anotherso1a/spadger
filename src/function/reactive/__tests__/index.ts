@@ -3,10 +3,12 @@ import { reactive } from '../index';
 test('reactive', () => {
   let a = { b: 1, arr: [], o: { c: 1 } };
   let count = 0;
+  let timer = null;
   return new Promise(resolve => {
     let reactived = reactive(a, function() {
       count++;
-      resolve(count);
+      clearTimeout(timer);
+      timer = setTimeout(() => resolve(count), 0);
     });
     reactived.b = 100;
     reactived.arr.push(1, 2, 3);
