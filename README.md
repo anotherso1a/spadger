@@ -167,6 +167,7 @@ curried(1,2)(3) //6
 |:-:|:-:|:-:|
 |Function|fn|需要防抖的方法|
 |Number|delay|单位:ms,防抖间隔|
+|Boolean|isPostposition|是否后置执行(当停止操作 delay ms 后执行,如果设为 true, 则触发时立即执行,后续 delay ms 内连续触发不执行)|
 
 **返回值:**
 
@@ -178,7 +179,7 @@ curried(1,2)(3) //6
 
 ```js
 let debounced = sp.debounce(()=>console.log("scroll")),500)
-window.onScroll = debounced; //滚动停止后才会执行
+window.onScroll = debounced; //滚动停止后500ms才会执行
 ```
 
 #### memorize
