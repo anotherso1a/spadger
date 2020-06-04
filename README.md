@@ -182,6 +182,29 @@ let debounced = sp.debounce(()=>console.log("scroll")), 500, true)
 window.onScroll = debounced; //滚动停止后500ms才会执行
 ```
 
+#### floatCompare
+
+用于比较浮点数的大小
+
+**参数:**
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|Number|a|浮点数A|
+|Number|b|浮点数B|
+
+**返回值:**
+
+|类型|描述|
+|:-:|:-:|
+|Boolean|两数是否相等|
+
+**例子:**
+
+```js
+sp.floatCompare(0.3, 0.1+0.2) // true
+```
+
 #### memorize
 
 缓存函数,被缓存的函数执行后会将参数对应的结果进行缓存
@@ -279,6 +302,33 @@ setTimeout(()=>{
 ```
 
 ### Object
+
+#### deepClone
+
+深拷贝
+
+**参数:**
+
+|类型|参数名|描述|
+|:-:|:-:|:-:|
+|object|obj|需要拷贝的对象|
+
+**返回值:**
+
+|类型|描述|
+|:-:|:-:|
+|object|深拷贝过后的对象|
+
+**例子:**
+
+```js
+a = { a:"A",b:[1,2,3,4,5] };
+a.c = a;
+copy = sp.deepClone(a);
+copy === a //false
+copy.a === a.a //true
+copy.b === a.b //false
+```
 
 #### isEqual
 
