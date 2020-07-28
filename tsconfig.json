@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "removeComments": true,
     "outDir": "./dist",
-    "declaration": false,
+    "declaration": true,
     "lib": [
       "esnext",
       "dom"
@@ -23,6 +23,7 @@
     "src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "__tests__"
   ]
 }

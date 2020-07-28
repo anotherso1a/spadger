@@ -1,8 +1,9 @@
 {
   "name": "spadgerjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "自用函数库",
   "main": "./dist/spadger.min.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "pr": "prettier --write '{src,__tests__}/**/*.{js,ts}'",
