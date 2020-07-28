@@ -1,25 +1,21 @@
-//docs: https://www.tslang.cn/docs/handbook/compiler-options.html
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
     "alwaysStrict": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "target": "es5",
-    "module": "commonjs",
+    "sourceMap": false,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "removeComments": true,
-    "outDir": "./dist/ts_built",
+    "outDir": "./dist",
     "declaration": false,
     "lib": [
-      "es5",
-      "es2015",
-      "es2016",
-      "es2017",
-      "es2018",
+      "esnext",
       "dom"
     ]
   },
@@ -28,5 +24,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
+  ]
 }
