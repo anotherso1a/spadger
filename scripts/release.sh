@@ -12,5 +12,5 @@ if [ $BRANCH != "master" ]; then
 fi
 
 npm version patch -m '[release](patch): @%s'
-npm publish
+
 git push
