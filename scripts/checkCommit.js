@@ -5,7 +5,7 @@ const msg = require('fs')
   .trim();
 
 // process.exit(1) //测试用
-const commitRE = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,50}/;
+const commitRE = /^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|\[release\])(\(.+\))?: .{1,50}/;
 const mergeRE = /^Merge branch feature\/.+/;
 const pullRE = /Merge branch 'master'.+/;
 if (!commitRE.test(msg) && !mergeRE.test(msg) && !pullRE.test(msg)) {

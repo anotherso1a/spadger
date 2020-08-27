@@ -12,6 +12,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "removeComments": true,
+    "esModuleInterop": true,
     "outDir": "./dist",
     "declaration": true,
     "lib": [

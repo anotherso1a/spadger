@@ -11,4 +11,4 @@ if [ $BRANCH != "master" ]; then
   exit 1
 fi
 
-npm version patch -m '[release] patch: @%s'
+npm version patch -m '[release](patch): @%s'
