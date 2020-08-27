@@ -13,7 +13,7 @@
     "dfb": "sh scripts/feature.sh d",
     "docs": "node ./scripts/createDocs/index.js",
     "build": "npm run pr && npm run test test && webpack",
-    "prepublishOnly": "sh scripts/release.sh"
+    "release": "npm run docs && npm run build && sh scripts/release.sh"
   },
   "keywords": [
     "js",
