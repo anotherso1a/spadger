@@ -15,4 +15,4 @@ version=npm version patch -s -m "[release](patch): @%s"
 
 git tag $version
 
-git push
+#git push
