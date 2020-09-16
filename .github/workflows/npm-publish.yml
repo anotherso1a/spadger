@@ -9,7 +9,14 @@ on:
       - 'package.json'
 
 jobs:
+  set-account:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: sh scripts/bot.sh ${{secrets.BOT_PASS}}
+
   build:
+    needs: set-account
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -20,7 +27,7 @@ jobs:
       - run: sh scripts/build.sh
 
   docs:
-    needs: build
+    needs: [build, set-account]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

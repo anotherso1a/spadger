@@ -1,5 +1,3 @@
-sh scripts/bot.sh
-
 npm run build:pure
 
 git add dist/
@@ -10,5 +8,5 @@ STATUS=`git status --porcelain`
 
 if [ "$STATUS" ]; then
   git commit -m "build: automatic build\nbuild time: $BUILD_TIME"
-  git push origin master
+  git push origin HEAD:master
 fi
