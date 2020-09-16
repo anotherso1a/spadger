@@ -5,6 +5,8 @@ on:
       - master
     tags: 
       - v*
+    paths:
+      - 'package.json'
 
 jobs:
   build:
