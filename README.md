@@ -405,25 +405,6 @@ sp.objectDig({a:{b:{c:{d:4}}}},'d') //4
 
 ### String
 
-#### 
-
-this is test
-
-**参数:**
-
-|类型|参数名|描述|
-|:-:|:-:|:-:|
-|Number|params|params|
-
-**返回值:**
-
-无
-**例子:**
-
-```js
-
-```
-
 #### parseQuery
 
 将链接search转换为对象,可以用原生api: URLSearchParams
