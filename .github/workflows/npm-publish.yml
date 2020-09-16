@@ -9,14 +9,8 @@ on:
       - 'package.json'
 
 jobs:
-  set-account:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - run: sh scripts/bot.sh ${{secrets.BOT_PASS}}
 
   build:
-    needs: set-account
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -24,17 +18,17 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: sh scripts/build.sh
+      - run: sh scripts/build.sh ${{secrets.BOT_PASS}}
 
   docs:
-    needs: [build, set-account]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: sh scripts/docs.sh
+      - run: sh scripts/docs.sh ${{secrets.BOT_PASS}}
 
   publish-npm:
     needs: [build, docs]
