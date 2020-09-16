@@ -1,3 +1,5 @@
+sh scripts/bot.sh
+
 npm run build:pure
 
 git add dist/

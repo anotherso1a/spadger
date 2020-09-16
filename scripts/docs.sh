@@ -1,3 +1,5 @@
+sh scripts/bot.sh
+
 npm run docs
 
 git add README.md
