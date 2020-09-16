@@ -1,3 +1,3 @@
-declare type Memorized = (para?: string | number | boolean) => any;
+declare type Memorized = (para: any) => any;
 export declare const memorize: (fn: Function) => Memorized;
 export {};

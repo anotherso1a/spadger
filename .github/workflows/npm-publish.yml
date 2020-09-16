@@ -1,12 +1,12 @@
 name: npm-publish
 on:
-  pull_request:
-    branches:
-      - master
-
   push:
     branches:
       - master
+    tags: 
+      - v*
+    paths:
+      - 'package.json'
 
 jobs:
   build:

@@ -13,20 +13,20 @@
 export function debounce(
   fn: Function,
   wait: number,
-  isPostposition: boolean = false
+  isPostposition: boolean = true
 ) {
-  var timeout: any = null;
+  let timeout: any = null;
   return isPostposition
-    ? function(...args: Array<any>) {
+    ? function(...args: Array<any>): void {
         //后置执行
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-          fn.call(this, args);
+          fn.apply(this, args);
         }, wait);
       }
-    : function(...args: Array<any>) {
+    : function(...args: Array<any>): void {
         //前置执行
-        timeout ? clearTimeout(timeout) : fn.call(this, args);
+        timeout ? clearTimeout(timeout) : fn.apply(this, args);
         timeout = setTimeout(() => (timeout = null), wait);
       };
 }

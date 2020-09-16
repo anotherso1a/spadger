@@ -10,7 +10,7 @@
  * fib(1000) //7.0330367711422765e+208
  */
 
-type Memorized = (para?: string | number | boolean) => any;
+type Memorized = (para: any) => any;
 
 export const memorize = (fn: Function): Memorized => {
   const cache = new Map();

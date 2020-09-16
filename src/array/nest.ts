@@ -15,14 +15,15 @@
  * nest(items,null,'parent_id')
  */
 
+type idType = keyof any | null;
 interface TreeNode {
-  id: string | number | null;
+  id: idType;
 }
 export const nest = (
-  items: Array<TreeNode>,
-  id: string | number | null = null,
-  link: string = 'parent_id'
-): Array<TreeNode> =>
+  items: TreeNode[],
+  id: idType = null,
+  link: keyof any = 'parent_id'
+): TreeNode[] =>
   items
     .filter(item => item[link] === id)
     .map(item => ({ ...item, children: nest(items, item.id, link) }));

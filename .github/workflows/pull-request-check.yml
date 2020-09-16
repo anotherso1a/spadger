@@ -1,0 +1,16 @@
+name: pull_request_check
+
+on: [push, pull_request]
+
+jobs:
+
+  unit_test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install
+        run: npm i
+
+      - name: exec unit test
+        run: npm test
