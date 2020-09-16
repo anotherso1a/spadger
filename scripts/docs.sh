@@ -9,6 +9,7 @@ DOC_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 STATUS=`git status --porcelain`
 
 if [ "$STATUS" ]; then
-  git commit -m "docs: automatic generate docs.\ngenerate time: $DOC_TIME"
+  git pull
+  git commit -m "docs: automatic generate docs. \r\n generate time: $DOC_TIME"
   git push origin HEAD:master
 fi
