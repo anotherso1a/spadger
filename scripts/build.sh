@@ -10,6 +10,9 @@ STATUS=`git status --porcelain`
 
 if [ "$STATUS" ]; then
   git pull
-  git commit -m "build: automatic build \r\n build time: $BUILD_TIME"
+  git commit -m "
+  build: automatic build
+  build time: $BUILD_TIME
+  "
   git push origin HEAD:master
 fi

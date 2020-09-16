@@ -10,6 +10,9 @@ STATUS=`git status --porcelain`
 
 if [ "$STATUS" ]; then
   git pull
-  git commit -m "docs: automatic generate docs. \r\n generate time: $DOC_TIME"
+  git commit -m "
+  docs: automatic generate docs.
+  generate time: $DOC_TIME
+  "
   git push origin HEAD:master
 fi
