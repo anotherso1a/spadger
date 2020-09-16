@@ -1,6 +1,6 @@
 {
   "name": "spadgerjs",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "自用函数库",
   "main": "./dist/spadger.min.js",
   "types": "./dist/index.d.ts",
