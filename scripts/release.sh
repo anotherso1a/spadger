@@ -11,8 +11,6 @@ if [ $BRANCH != "master" ]; then
   exit 1
 fi
 
-version=`npm version patch -s -m "[release](patch): @%s"`
+npm version patch -m "[release](patch): @%s"
 
-git tag $version
-
-#git push
+git push
