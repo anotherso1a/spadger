@@ -17,10 +17,20 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: npm run build
+      - run: sh scripts/build.sh
+
+  docs:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: sh scripts/docs.sh
 
   publish-npm:
-    needs: build
+    needs: [build, docs]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

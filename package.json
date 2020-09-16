@@ -12,7 +12,8 @@
     "mfb": "sh scripts/feature.sh m",
     "dfb": "sh scripts/feature.sh d",
     "docs": "node ./scripts/createDocs/index.js",
-    "build": "npm run pr && npm run test test && webpack",
+    "build": "npm run pr && npm run test && webpack",
+    "build:pure": "webpack",
     "release": "sh scripts/release.sh"
   },
   "keywords": [
