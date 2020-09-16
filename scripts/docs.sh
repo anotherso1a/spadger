@@ -10,5 +10,5 @@ STATUS=`git status --porcelain`
 
 if [ "$STATUS" ]; then
   git commit -m "docs: automatic generate docs.\ngenerate time: $DOC_TIME"
-  git push origin master
+  git push origin HEAD:master
 fi
